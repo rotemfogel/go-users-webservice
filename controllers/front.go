@@ -14,5 +14,5 @@ func RegisterControllers() {
 
 func encodeResponseAsJson(data interface{}, w io.Writer) {
 	enc := json.NewEncoder(w)
-	enc.Encode(data)
+	_ = enc.Encode(data)
 }

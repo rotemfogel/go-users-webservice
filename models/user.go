@@ -12,7 +12,7 @@ type User struct {
 }
 
 var (
-	users = make(map[int]*User)
+	users  = make(map[int]*User)
 	nextId = 1
 )
 
@@ -30,14 +30,14 @@ func GetUser(id int) (*User, error) {
 	user := users[id]
 	var err error = nil
 	if user == nil {
-		err = fmt.Errorf("User with id [%v] does not exist", id)
+		err = fmt.Errorf("user with id [%v] does not exist", id)
 	}
 	return user, err
 }
 
 func AddUser(u User) (User, error) {
 	if u.Id != 0 {
-		return u, errors.New("User object cannot have and Id")
+		return u, errors.New("user object cannot have and Id")
 	}
 	u.Id = nextId
 	nextId++
